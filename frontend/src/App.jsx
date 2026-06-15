@@ -304,14 +304,14 @@ const App = () => {
     };
 
     const urlParams = new URLSearchParams(window.location.search);
-const resetToken = urlParams.get('token');
-if (window.location.pathname === '/reset-password' && resetToken) {
-    return <ResetPasswordPage token={resetToken} />;
-}
+    const resetToken = urlParams.get('token');
+    if (window.location.pathname === '/reset-password' && resetToken) {
+        return <ResetPasswordPage token={resetToken} />;
+    }
 
-if (!isLoggedIn) {
-    return <AuthPage onLoginSuccess={() => setIsLoggedIn(true)} />;
-}
+    if (!isLoggedIn) {
+        return <AuthPage onLoginSuccess={() => setIsLoggedIn(true)} />;
+    }
 
     return (
         <div className="flex flex-col min-h-screen bg-[#F8FAFC] font-sans text-[#475569]">
@@ -1430,6 +1430,20 @@ const AuthPage = ({ onLoginSuccess }) => {
                                     <button onClick={() => setIsLogin(true)} className={`pb-4 px-6 text-sm font-bold transition-all border-b-2 ${isLogin ? 'border-blue-600 text-blue-600' : 'border-transparent text-slate-400'}`}>Sign in</button>
                                     <button onClick={() => setIsLogin(false)} className={`pb-4 px-6 text-sm font-bold transition-all border-b-2 ${!isLogin ? 'border-blue-600 text-blue-600' : 'border-transparent text-slate-400'}`}>Create account</button>
                                 </div>
+
+                                {/* Demo Credentials */}
+                                {isLogin && (
+                                    <div className="bg-blue-50 border border-blue-200 rounded-2xl p-4 mb-6">
+                                        <p className="text-xs font-bold text-blue-700 uppercase tracking-widest mb-3">Demo Credentials</p>
+                                        <button
+                                            type="button"
+                                            onClick={() => { setEmail('demo@notification.com'); setPassword('Demo@1234'); }}
+                                            className="w-full py-2 px-4 bg-white border border-blue-200 rounded-xl text-xs font-semibold text-blue-700 hover:bg-blue-100 transition-all"
+                                        >
+                                            👤 Login as Demo User
+                                        </button>
+                                    </div>
+                                )}
 
                                 <form className="space-y-5" onSubmit={handleSubmit}>
                                     {!isLogin && (
