@@ -25,8 +25,20 @@ A full-stack notification infrastructure built with the MERN stack — featuring
 | Email | Nodemailer + Gmail SMTP |
 ---
 ## 📸 Screenshots
-*(add 2-3 screenshots here: dashboard, queue monitor, login screen)*
+
+### Dashboard
+![Dashboard](screenshots/Dashboard1.png)
+
+### Queue Monitor
+![Queue Monitor](screenshots/Queuemonitor.png)
+
+### Preferences
+![Preferences](screenshots/Preferences.png)
+
+### Login
+![Login](screenshots/login.png)
 ---
+
 ## ⚙️ Setup
 ### 1. Clone the repo
 ```bash
